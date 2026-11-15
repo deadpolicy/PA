@@ -36,8 +36,8 @@ body
 
 hr 
 {
-  border: none;
-  border-top: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
+  border-top: 3px solid rgba(0, 0, 0, 0.651);
   margin: 1.75rem 0;
 }
 
@@ -337,6 +337,13 @@ mark
   padding: 0.12rem 0.4rem;
   border-radius: 4px;
 }
+
+.subtitle 
+{
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
+
 @media print 
 {
   body 
