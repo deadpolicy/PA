@@ -1,9 +1,9 @@
 
 :root 
 {
-  --bg-page: #f1f5f9;
-  --bg-surface: #ffffff;
-  --bg-subtle: #f8fafc;
+  --bg-page: #dfe4ea;
+  --bg-surface: #0a0909;
+  --bg-subtle: #878b8b;
   --text-main: #0f172a;
   --text-muted: #475569;
   --accent: #1e3a8a;
@@ -27,7 +27,7 @@ body
   max-width: 920px;
   margin: 2rem auto;
   padding: 2.5rem 3rem;
-  background: var(--bg-surface);
+  background: var(--bg-page);
   border: 2px solid var(--border-color);
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
@@ -330,6 +330,13 @@ footer
   }
 }
 
+mark 
+{
+  background-color: rgba(164, 240, 32, 0.15);
+  color: rgba(8, 187, 89, 0.9);
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+}
 @media print 
 {
   body 
