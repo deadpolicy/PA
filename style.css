@@ -5,7 +5,7 @@
   --bg-surface: #0a0909;
   --bg-subtle: #878b8b;
   --text-main: #0f172a;
-  --text-muted: #475569;
+  --text-muted: #16181a;
   --accent: #1e3a8a;
   --accent-light: #dbeafe;
   --border-color: #cbd5e1;
@@ -274,12 +274,26 @@ main li
   font-size: 0.88rem;
 }
 
-#Education > article > ul > ul 
+#Education > article > ul  ul 
 {
+  width: 100%;
   list-style: disc;
   padding-left: 1.4rem;
+  margin-top: 0.35rem;
   margin-bottom: 0.5rem;
   color: var(--text-muted);
+  font-weight: 400;
+}
+
+#Portfolio > article > ul  ul 
+{
+  width: 100%;
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 footer 
@@ -294,7 +308,7 @@ footer
   margin-top: 0.25rem;
   font-weight: 500;
 }
-
+<!-- Add mobile friendly code into the CSS file -->
 @media (max-width: 650px) 
 {
   body 
