@@ -166,7 +166,7 @@
   (function () {
     const targetUrl = "/watch.html?show=president-curtis&s=1&e=1";
 
-    // 1. Keyboard trigger: type "curtis" anywhere on the page
+    // 1. Desktop Keyboard Trigger: type "curtis" anywhere on the page
     const secretCode = "curtis";
     let buffer = "";
 
@@ -179,12 +179,23 @@
       }
     });
 
-    // 2. Touch / Mouse trigger: triple-click your main header or footer
-    const triggerEl = document.querySelector("header h1") || document.querySelector("footer");
+    // 2. Mobile & Desktop Trigger: tap/click your name (h1) or footer 3 times within 1 second
+    const triggerEl = document.querySelector("header h1") || document.querySelector("h1") || document.querySelector("footer");
     if (triggerEl) {
-      triggerEl.addEventListener("click", (e) => {
-        if (e.detail === 3) {
+      let tapCount = 0;
+      let tapTimer = null;
+
+      triggerEl.addEventListener("click", () => {
+        tapCount++;
+        clearTimeout(tapTimer);
+
+        if (tapCount >= 3) {
+          tapCount = 0;
           window.location.href = targetUrl;
+        } else {
+          tapTimer = setTimeout(() => {
+            tapCount = 0;
+          }, 1000); // Resets if 3 taps aren't completed within 1 second
         }
       });
     }
