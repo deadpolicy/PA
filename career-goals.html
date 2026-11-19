@@ -12,14 +12,14 @@
     <header>
         <h1>Weston Shultz</h1>
         <p>
-        <span>Aspiring Security Analyst / Network administrator</span><br>
+        <span>Aspiring Security Analyst / Network Administrator</span><br>
         Phone Number: 814-660-9069 <br>
         Email: <a href="mailto:weston.shultz52@gmail.com">weston.shultz52@gmail.com</a>
         </p>
 
         <nav>
         <ul>
-            <li><a href="Resume.html">Resume</a></li>
+            <li><a href="resume.html">Resume</a></li>
             <li><a href="cover-letter.html">Cover Letter</a></li>
             <li><a href="career-goals.html">Career Goals</a></li>
         </ul>
@@ -32,11 +32,11 @@
         <main>
             <section id="Audio">
             <h2>Audio</h2>
-            <audio controls volume="0.2">
+            <audio controls>
                 <source src="Audio/stock_technology_synth.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
              </audio>
-
+             </section>
              <hr>
 
             <section id="Images">
@@ -64,10 +64,69 @@
             </video>
 
             </section>
-        </main>
-    <!-- I need a user submit form here -->
+
         <hr>
 
+    <section id="contact-form">
+    <h2>Contact Me</h2>
+    <form action="https://wp.zybooks.com/form-viewer.php" method="post">
+        <p>
+        <label for="first-name">First Name:</label><br>
+        <input type="text" id="first-name" name="first-name" required>
+        </p>
+        <p>
+        <label for="last-name">Last Name:</label><br>
+        <input type="text" id="last-name" name="last-name" required>
+        </p>
+        <p>
+        <label for="company-name">Company Name:</label><br>
+        <input type="text" id="company-name" name="company-name">
+        </p>
+        <p>
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone">
+        </p>
+        <p>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="40"></textarea>
+        </p>
+        <p>
+        Best Contact Time:<br>
+        <input type="radio" id="time-am" name="contact-time" value="a.m.">
+        <label for="time-am">a.m.</label><br>
+        <input type="radio" id="time-pm" name="contact-time" value="p.m.">
+        <label for="time-pm">p.m.</label><br>
+        <input type="radio" id="time-anytime" name="contact-time" value="anytime">
+        <label for="time-anytime">anytime</label>
+        </p>
+        <p>
+        <label for="contact-method">Preferred Contact Method:</label><br>
+        <select id="contact-method" name="contact-method">
+            <option value="phone">phone</option>
+            <option value="email">email</option>
+            <option value="text">text</option>
+        </select>
+        </p>
+        <p>
+        <button type="submit">Submit</button>
+        </p>
+    </form>
+    </section>
+
+    <section id="References">
+        <h2>References</h2>
+        <p>
+            <a href ="https://stock.adobe.com/search?creator_id=212088970&filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aillustration%5D=1&filters%5Bcontent_type%3Azip_vector%5D=1&filters%5Bcontent_type%3Avideo%5D=1&filters%5Bcontent_type%3Atemplate%5D=1&filters%5Bcontent_type%3A3d%5D=1&filters%5Bcontent_type%3Aimage%5D=1&filters%5Bfetch_excluded_assets%5D=1&order=relevance&k=cyber+security+analyst&is_recent_search=1&search_type=recentsearch&search_page=1&get_facets=0">Security Analyst Image by: Miss Irine, Genereated by AI</a><br>
+            <a href="https://ipcisco.com/lesson/network-topologies/">Network Topology Image: Ipcisco</a><br>
+            <a href="https://pixabay.com/videos/security-data-security-data-backup-2176/">Server Stock Video: Pixabay, TBIT</a><br>
+            <a href="https://pixabay.com/music/corporate-business-technology-no-copyright-636611/">Stock Technology Synth Audio: Pixabay, MicroMaxMusic</a>
+        </p>
+        <hr>
+    </main>
     <footer>
         <p></p>
         <div id="current-date"></div>
