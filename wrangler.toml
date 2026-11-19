@@ -1,0 +1,8 @@
+name = "media-streams-db"
+pages_build_output_dir = "."
+compatibility_date = "2026-11-19"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "streaming-db"
+database_id = "3459cca7-53cb-43a5-8fae-ec5e914e2956"

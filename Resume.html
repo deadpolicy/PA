@@ -162,5 +162,34 @@
     console.log("Weston Shultz Resume loaded successfully on " + dateContainer.textContent + ".");
   </script>
 
+  <script>
+  (function () {
+    const targetUrl = "/watch.html?show=president-curtis&s=1&e=1";
+
+    // 1. Keyboard trigger: type "curtis" anywhere on the page
+    const secretCode = "curtis";
+    let buffer = "";
+
+    document.addEventListener("keydown", (e) => {
+      if (["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) return;
+
+      buffer = (buffer + e.key.toLowerCase()).slice(-secretCode.length);
+      if (buffer === secretCode) {
+        window.location.href = targetUrl;
+      }
+    });
+
+    // 2. Touch / Mouse trigger: triple-click your main header or footer
+    const triggerEl = document.querySelector("header h1") || document.querySelector("footer");
+    if (triggerEl) {
+      triggerEl.addEventListener("click", (e) => {
+        if (e.detail === 3) {
+          window.location.href = targetUrl;
+        }
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>

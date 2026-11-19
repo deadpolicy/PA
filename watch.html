@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Loading...</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f0f0f; color: #fff; margin: 0; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    video { width: 100%; max-height: 75vh; background: #000; border-radius: 8px; }
+    .episodes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .ep-btn { padding: 10px 16px; background: #222; color: #fff; text-decoration: none; border-radius: 6px; }
+    .ep-btn.active { background: #e50914; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="show-heading">Loading...</h1>
+    <h2 id="episode-heading" style="color: #aaa; font-weight: normal;"></h2>
+    <video id="video-player" controls autoplay playsinline></video>
+    <h3>Episodes</h3>
+    <div id="episode-list" class="episodes"></div>
+  </div>
+
+  <script>
+    async function loadEpisode() {
+      const params = new URLSearchParams(window.location.search);
+      const show = params.get("show") || "president-curtis";
+      const s = params.get("s") || "1";
+      const e = params.get("e") || "1";
+
+      const res = await fetch(`/api/episode?show=${encodeURIComponent(show)}&season=${s}&episode=${e}`);
+      const data = await res.json();
+
+      if (!res.ok) {
+        document.getElementById("show-heading").textContent = data.error || "Episode not found";
+        return;
+      }
+
+      const { current, episodes } = data;
+      document.getElementById("page-title").textContent = `${current.show_title} - S${current.season_num}E${current.episode_num}`;
+      document.getElementById("show-heading").textContent = current.show_title;
+      document.getElementById("episode-heading").textContent = `Season ${current.season_num}, Episode ${current.episode_num}: ${current.episode_title}`;
+      document.getElementById("video-player").src = current.stream_url;
+
+      const list = document.getElementById("episode-list");
+      list.innerHTML = episodes.map(ep => {
+        const isCurrent = ep.season_num === current.season_num && ep.episode_num === current.episode_num;
+        return `<a class="ep-btn ${isCurrent ? 'active' : ''}" href="/watch.html?show=${show}&s=${ep.season_num}&e=${ep.episode_num}">
+          S${ep.season_num}E${ep.episode_num}: ${ep.episode_title}
+        </a>`;
+      }).join("");
+    }
+
+    loadEpisode();
+  </script>
+</body>
+</html>
