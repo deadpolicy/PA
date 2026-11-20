@@ -31,7 +31,7 @@ export default {
       return Response.json({ current, episodes: allEpisodes });
     }
 
-    // Serve Resume.html, watch.html, style.css, etc. for all other requests
+    // Serve index.html, watch.html, cover-letter.html, career-goals.html, and style.css
     return env.ASSETS.fetch(request);
   },
 };
